@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import  logo from '../../assets/logo.png'
 import  search from '../../assets/search.svg'
 import Avatar from '../../assets/Button/Button'
+import './Navbar.css'
 const Navbar =()=>{
 
     var User = null
@@ -10,7 +11,7 @@ const Navbar =()=>{
 return(
     <navbar>    
         <div className='navbar'>
-            <Link to ='/' className='nav-item nav-btn'> 
+            <Link to ='/' className='nav-item nav-logo'> 
             <img src={logo} alt='logo'/>
              </Link>
              <Link to ='/' className='nav-item nav-btn'>About</Link>
@@ -18,7 +19,7 @@ return(
              <Link to ='/' className='nav-item nav-btn'>For Teams</Link>
              <form >
                     <input type="text" placeholder= 'Search...'/>
-                    <img src={search} alt="search" width ="18"/>
+                    <img src={search} alt="search" width ="18" className='search-icon'/>
 
              </form>
             { User === null ?
