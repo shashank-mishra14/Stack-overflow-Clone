@@ -26,9 +26,9 @@ return(
             <Link to='/Auth' className='nav-items nav-links'>Log in</Link> : 
             <>
 
-            <Link to='/'><Avatar>M</Avatar></Link>
+            <Avatar backgroundColor='#009dff' px="10px" py="7px" borderRadius="50%" color='white'><Link to='/'  style={{color:"white", textDecoration="none"}}>M</Link></Avatar>
 
-            <Button> Log out</Button>
+            <button className='nav-items nav-links'> Log out</button>
              </> 
             }            
         </div>
