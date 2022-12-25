@@ -10,7 +10,9 @@
 
  <Switch>
 
-    c
+      <Route exact path='/welcome' component={<Home/>}/>
+      <Route path='/Auth' element={<Auth/>}/>
+
 
  </Switch>
     )
