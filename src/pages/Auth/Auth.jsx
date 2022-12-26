@@ -1,7 +1,7 @@
 import React, { useState } from "react";
  import './Auth.css'
  import icon from '../../assets/icon.png'
-
+import AboutAuth from "./AboutAuth";
 
 const Auth =()=> {
         const[isSignup,setIsSignup]=useState(false)
@@ -11,7 +11,8 @@ const Auth =()=> {
         }
     return(
             <section class='auth-section'>
-                    <div class='auth-container'>
+                {isSignup && <AboutAuth/>}
+                    <div class='auth-container-2'>
                                 { !isSignup && <img src ={icon} alt='stack overflow' className='login-logo'/> }
                         <form>
                                 {
@@ -44,9 +45,10 @@ const Auth =()=> {
                           </label>
 
                           <label htmlFor="password">
-                                  <div>
-                         <h4>Password</h4>
-                        { !isSignup && <h4>Forgot Password?</h4>}
+                                  <div style ={{display:"flex",justifyContent:"space-between"}}>
+
+                                        <h4>Password</h4>
+                        { !isSignup && <p style={{color:'#007ac6',fontSize:'13px'}}>Forgot Password?</p>}
                          </div>
 
                          <input type="password" name='password' id='password'/>
