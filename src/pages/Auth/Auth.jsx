@@ -5,6 +5,10 @@ import React, { useState } from "react";
 
 const Auth =()=> {
         const[isSignup,setIsSignup]=useState(false)
+
+        const handleSwitch=()=>{
+                setIsSignup(!isSignup)
+        }
     return(
             <section class='auth-section'>
                     <div class='auth-container'>
@@ -16,10 +20,19 @@ const Auth =()=> {
                           </label>
 
                           <label htmlFor="password">
-                         <h4>Email</h4>
+                                  <div>
+                         <h4>Password</h4>
+                        { !isSignup && <h4>Forgot Password?</h4>}
+                         </div>
+
                          <input type="password" name='password' id='password'/>
                           </label>
+                          <button  type='submit' className='auth-btn'>{isSignup ? 'Sign up' :'Log in'}</button>
                         </form>
+                        <p>
+                           {isSignup ? 'Already have an account': "Don't have an acoount?"}
+                                <button type='button' className='handle-switch-btn' onClick={handleSwitch}>{isSignup ? "Log in": 'sign up'}</button>
+                                </p>
                     </div>
             </section>
     )
