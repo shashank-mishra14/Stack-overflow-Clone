@@ -9,7 +9,7 @@ const Navbar =()=>{
     var User = null
 
 return(
-    <navbar>    
+    <nav className="main-nav">    
         <div className='navbar'>
             <Link to ='/' className='nav-item nav-logo'> 
             <img src={logo} alt='logo'/>
@@ -26,13 +26,13 @@ return(
             <Link to='/Auth' className='nav-items nav-links'>Log in</Link> : 
             <>
 
-            <Avatar backgroundColor='#009dff' px="10px" py="7px" borderRadius="50%" color='white'><Link to='/User'  style={{color:"white", textDecoration="none"}}>M</Link></Avatar>
+            <Avatar backgroundColor='#009dff' px="10px" py="7px" borderRadius="50%" color='white'><Link to='/User'  style={{color:"white", textDecoration:"none"}}>M</Link></Avatar>
 
             <button className='nav-items nav-links'> Log out</button>
              </> 
             }            
         </div>
-    </navbar>
+    </nav>
 
 )
 
