@@ -1,27 +1,28 @@
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import { BrowserRouter as Router } from 'react-router-dom' 
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import './App.css';
-import Navbar from './components/navbar/Navbar'
-import Routes from './Routes'
-import {Routes,Route} from 'react-router-dom'
-
-
-import Home from './pages/Home/Home'
- import Auth from './pages/Auth/Auth'
-
+import Navbar from './components/Navbar/Navbar'
+import AllRoutes from './AllRoutes'
+import { fetchAllQuestions } from './actions/question'
+import { fetchAllUsers } from './actions/users'
 
 function App() {
+
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(fetchAllQuestions())
+    dispatch(fetchAllUsers())
+  }, [dispatch])
+
   return (
     <div className="App">
-      <BrowserRouter>
-      <Navbar />
-      <Routes/>
-      <Routes>
-      <Route exact path='/welcome' component={Home}/>
-     <Route path='/Auth' component={Auth}/>
-      </Routes>
-      </BrowserRouter >
-      </div>
-      
+      <Router >
+        <Navbar />
+        <AllRoutes />
+      </Router >
+    </div>
   );
 }
 
